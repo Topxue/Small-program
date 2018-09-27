@@ -1,0 +1,67 @@
+<!--pages/settlement/ settlement.wxml-->
+<view class='page'>
+  <!-- add address -->
+  <view class='page_bd'>
+    <view class='address_vw'>
+      <view class='weui-flex'>
+        <text class='name_s'>{{addressLIst.username}}</text>
+        <text>{{addressLIst.phone}}</text>
+      </view>
+      <view class='weui-flex'>
+        <icon class='iconfont icon-dingwei2'></icon>
+        <text class='weui-felx'>{{addressLIst.province}} {{addressLIst.city}} {{addressLIst.area}}{{addressLIst.addr_detail}}</text>
+      </view>
+    </view>
+    <view class='line_view'></view>
+    <navigator url='../address/address'>
+      <view class='weui-flex add_adres'>+添加新地址</view>
+    </navigator>
+    <!-- commodity -->
+    <view class='page_bd'>
+      <view class='shopli' wx:for="{{shopLists}}" wx:key="shopLists.goods_id">
+        <view class='weui-flex commodity' hover-class='down_loda' hover-stay-time='100'>
+          <image src='{{item.image1}}'></image>
+          <view class='pc_bcleft'>
+            <view class='nameCont'>
+              <text>{{item.name}}</text>
+              <text> {{item.goods_count}}</text>
+            </view>
+
+            <view class='nowPrice'>￥{{item.price}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='details_vw'>
+        <view class='weui-flex'>
+          <text>商品总价</text>
+          <text>{{piceNumber}}</text>
+        </view>
+        <view class='weui-flex'>
+          <text>运费</text>
+          <text>0.00</text>
+        </view>
+        <view class='weui-flex'>
+          <text>优惠</text>
+          <text>0.00</text>
+        </view>
+      </view>
+    </view>
+    <!-- staty_chinese -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label staty_chinese">留言</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请在这里输入留言..." />
+      </view>
+    </view>
+    <!-- oders_pice number -->
+    <view class='weui-flex pice_btn'>
+      <view class='pice_nuber'>
+        <text>应付金额 </text>
+        <text>{{piceNumber}}</text>
+      </view>
+      <button type='button' class='btn_goshop' size='mini'>立即下单</button>
+    </view>
+  </view>
+</view>

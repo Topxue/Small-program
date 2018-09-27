@@ -1,0 +1,71 @@
+<!--pages/my/my.wxml-->
+<view class='page'>
+  <!-- top bgColor my -->
+  <view class='page__bd bg_viewstop'>
+    <view class='weui-flex vwicon_top'>
+      <icon class='iconfont icon-shezhi' bindtap='setmsg'></icon>
+      <navigator url='../MassageList/MassageList'>
+        <icon class='iconfont icon-icon--'></icon>
+      </navigator>
+    </view>
+    <!-- ptoImgs -->
+    <view class=' weui-flex potos_view'>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image src='{{userInfo.image}}' class='pto_imgs'></image>
+      </view>
+      <button open-type="getUserInfo" bindgetuserinfo='getUserInfo' wx:if="{{!userInfo}}"></button>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="page__title phone_num">{{userInfo.nickname}}</view>
+        <view class='icopre'></view>
+        <view class="weui-media-box__desc">
+          <text>我的钱包</text>
+          <text>我的收藏</text>
+        </view>
+        <text class='coders'></text>
+      </view>
+    </view>
+    <!-- addressList -->
+    <view class='addressList'>
+      <view class='weui-flex top-view' bindtap='gotoOder'>
+        <text>我的订单</text>
+        <view class='weui-flex icon_view'>
+          <text>查看全部订单</text>
+          <icon class='iconfont icon-right oder_iocnRight'></icon>
+        </view>
+      </view>
+      <view class='weui-flex oder_list'>
+          <view class='weui-flex stats_oder' bindtap='payMent'>
+            <icon class='iconfont icon-daifukuan'></icon>
+            <text>待付款</text>
+          </view>
+        <view class='weui-flex stats_oder' bindtap='signIn'>
+          <icon class='iconfont icon-daiqianshou1'></icon>
+          <text>待签收</text>
+        </view>
+        <view class='weui-flex stats_oder' bindtap='compLeted'>
+          <icon class='iconfont icon-yiwancheng1'></icon>
+          <text>已完成</text>
+        </view>
+        <view class='weui-flex stats_oder' bindtap='cancelled'>
+          <icon class='iconfont icon-yiquxiao'></icon>
+          <text>已取消</text>
+        </view>
+      </view>
+    </view>
+    <!-- view_list -->
+    <view class='car_listview'>
+      <view class='weui-flex my_cark' hover-class='downs_tap' hover-stay-time='100' bindtap='addressadd'>
+        <image src='../../images/user_address.svg'></image>
+        <text>收货地址</text>
+        <text>收货地址列表</text>
+        <icon class='iconfont icon-right'></icon>
+      </view>
+      <view class='weui-flex my_cark' hover-class='downs_tap' hover-stay-time='100'>
+        <icon class='iconfont icon-fenxiang'></icon>
+        <text class='fenenjoy'>分享</text>
+        <text>分享到</text>
+        <icon class='iconfont icon-right'></icon>
+      </view>
+    </view>
+  </view>
+</view>
